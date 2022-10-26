@@ -2,7 +2,7 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 
-const BlogPage = (props) => {
+const BlogPage = (props: any) => {
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
@@ -28,7 +28,7 @@ const BlogPage = (props) => {
   );
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: { params: any }) => {
   const relativePath = composeSlug(params.slug);
   let data = {};
   let query = {};
